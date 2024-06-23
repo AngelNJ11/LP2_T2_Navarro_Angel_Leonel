@@ -39,10 +39,10 @@ public class Empleado {
 	private LocalDate fechaNacimiento;
 	
 	@Column(name = "direccion", nullable=false, length = 45)
-	private	String direccion;
+	private	String c;
 	
 	@Column(name = "correo", nullable=false, length = 45, unique = true)
-	private String Correo;
+	private String correo;
 	
 	@ManyToOne
 	@JoinColumn(name = "area_id", nullable = false)

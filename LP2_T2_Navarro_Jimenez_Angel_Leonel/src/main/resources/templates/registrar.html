@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Empleado</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Registro empleado</h2>
+    <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+        <span th:text="${errorMessage}"></span>
+    </div>
+    <form th:action="@{/dniEmpleado}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="nombre">Dni:</label>
+            <input type="text" class="form-control" id="nombre" th:field="*{dniEmpleado}" placeholder="Ingrese su nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">nombre:</label>
+            <input type="text" class="form-control" id="correo" th:field="*{nombreEmpleado}" placeholder="Ingrese su correo electrónico" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Apellifo:</label>
+            <input type="text" class="form-control" id="password" th:field="*{apellidoEmpleado}" placeholder="Ingrese su contraseña" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">Fecha:</label>
+            <input type="text" class="form-control" id="correo" th:field="*{fechaNacimiento}" placeholder="Ingrese su correo electrónico" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Direccion:</label>
+            <input type="text" class="form-control" id="password" th:field="*{direccion}" placeholder="Ingrese su contraseña" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo :</label>
+            <input type="email" class="form-control" id="correo" th:field="*{correo}" placeholder="Ingrese su correo electrónico" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Area:</label>
+            <input type="text" class="form-control" id="password" th:field="*{area}" placeholder="Ingrese su contraseña" required>
+        </div>
+        <a th:href="@{/}" class="btn btn-secondary">Regresar</a>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+</body>
+</html>
